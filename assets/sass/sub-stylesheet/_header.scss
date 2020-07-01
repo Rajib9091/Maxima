@@ -1,0 +1,227 @@
+/* @@@@@@@@@@@ Header Section Start here  @@@@@@@@@@@@@@@@ */
+.header-section {
+    @include breakpoint(max-xl) {
+        display: none;
+    }
+    &.transparent-header {
+        @extend %abs;
+        width: 100%;
+    }
+    &.style-2 {
+        .menu-fixed {
+            .logo::before {
+                display: none;
+            }
+        }
+		.logo {
+            @extend %rel;
+			&::before {
+				@include breakpoint(xl) {
+					position: absolute;
+				    content: "";
+				    border-left: 200px solid transparent;
+				    border-right: 200px solid transparent;
+				    border-top: 200px solid $theme-color;
+				    left: 50%;
+				    top: 0;
+                    margin-left: -190px;
+                    margin-top: -30px;
+				}
+			}
+			img {
+                @extend %rel;
+				z-index: 9;
+			}
+		}
+    }
+    &.bg-ash {
+        .header-area {
+            &.menu-fixed {
+                background: $ash-color;
+                .primary-menu {
+                    .main-area {
+                        .main-menu {
+                            ul {
+                                li {
+                                    a {
+                                        color: $title-color;
+                                    }
+                                    ul {
+                                        li {
+                                            a {
+                                                color: $white-color;
+                                                &:hover {
+                                                    color: $primary-color;
+                                                }
+                                            }
+                                            &.active {
+                                                a {
+                                                    color: $primary-color;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-area {
+        @extend %rel;
+        z-index: 111;
+        &.menu-fixed {
+            position: fixed;
+            width: 100%;
+            // top: 0;
+            z-index: 99;
+            background: $theme-color;
+            box-shadow: 0 0 3px rgba(81, 136, 136, .10);
+            .primary-menu .main-area .main-menu ul li {
+                &.active {
+                    > a {
+                        color: $primary-color;
+                    }
+                }
+                a {
+                    color: $white-color;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+            .search-cart li .icon {
+                color: $primary-color;
+                &.icon-search {
+                    background: $white-color;
+                }
+                &.icon-check {
+                    background: $white-color;
+                }
+            }
+            .search-cart li .cart-option .count-item {
+                background: $primary-color;
+                color: $white-color;
+            }
+        }
+    }
+    .primary-menu {
+        @extend %flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            a {
+                display: block;
+                img {
+                    display: block;
+                }
+            }
+        }
+        .main-area {
+            @extend %flex;
+            align-items: center;
+            .main-menu {
+                ul {
+                    @extend %flex;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        padding: 0;
+                        &.active, &:hover {
+                            > a {
+                                color: $primary-color;
+                            }
+                        }
+                        a {
+                            padding: 33px 20px;
+                            color: $title-color;
+                            font-size: $fs-base;
+                            display: block;
+                            @include transition($transition);
+                        }
+                        ul {
+                            @extend %abs;
+                            min-width: 200px;
+                            background: $theme-color;
+                            box-shadow: 0 0 5px rgba(136, 136, 136, .10);
+                            display: block;
+                            top: 100%;
+                            transform: scaleY(0);
+                            transform-origin: top;
+                            z-index: 999;
+                            @include transition($transition);
+                            li {
+                                a {
+                                    font-size: 98%;
+                                    padding: 10px 15px;
+                                    color: $white-color;
+                                    width: 100%;
+                                    border-bottom: 1px solid #ffffff40;
+                                    &:hover {
+                                        padding-left: 20px;
+                                        color: $theme-color;
+                                        background: $white-color;
+                                    }
+                                }
+                                &.active, &:hover {
+                                    > a {
+                                        background: $white-color;
+                                        color: $theme-color;
+                                    }
+                                }
+                                &:last-child {
+                                    a {
+                                        border-bottom: none;
+                                    }
+                                }
+                                &.menu-item-has-children {
+                                    margin-right: 0px;
+                                    a {
+                                        &::after {
+                                            right: 15px;
+                                            transform: translateY(-50%) rotate(-90deg);
+                                        }
+                                    }
+                                }
+                                ul {
+                                    left: 100%;
+                                    top: 0;
+                                }
+                            }
+                        }
+                        &.menu-item-has-children {
+                            margin-right: 16px;
+                            position: relative;
+                            >a {
+                                @extend %rel;
+                                &::after {
+                                    @extend %abs;
+                                    top: 50%;
+                                    right: 0;
+                                    transform: translateY(-50%);
+                                    font-weight: 400;
+                                    content: "\ea99" !important;
+                                    font-family: IcoFont !important;
+                                }
+                            }
+                        }
+                        &:hover{
+                            >ul {
+                                transform: scaleY(1);
+                            }
+                        }
+                    }
+                }
+            }
+            .header-btn {
+                margin-left: 15px;
+                .lab-btn {
+                    display: block;
+                    padding: 13px 30px;
+                }
+            }
+        }
+    }
+}

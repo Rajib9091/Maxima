@@ -1,0 +1,245 @@
+/* @@@@@@@@@@@@@  Footer Section Start Here  @@@@@@@@@@@@@@ */
+footer {
+    .pattan-shape {
+        left: 0;
+    }
+}
+.footer-top-area {
+    @extend %hidden;
+    background: $white-color;
+    z-index: 11;
+    max-width: 1520px;
+    margin: 0 auto;
+    @extend %rel;
+    .ft-top-abs-area {
+        @include breakpoint(xl) {
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+    .footer-top { 
+        .ft-bottom {
+            z-index: 1;
+            @extend %rel;
+            padding: 70px 0;
+            @include breakpoint(xl) {
+                padding: 180px 0 70px;
+
+            }
+            .ft-title {
+                margin-bottom: 15px;
+                h4 {
+                    margin-bottom: 0;
+                }
+            }
+            .ft-body {
+                p {}
+                .lab-ul {
+                    li {
+                        padding: 5px 0;
+                    }
+                }
+                .lab-btn {
+                    margin-top: 20px;
+                }
+            }
+            .ft-opening-part {
+                margin-bottom: 30px;
+                @include breakpoint(xl) {
+                    padding: 0 30px;
+                    margin-bottom: 0;
+                }
+                .lab-ul {
+                    li {
+                        @extend %flex;
+                        justify-content: space-between;
+                        padding: 10px 0;
+                        border-bottom: 1px dashed #ebebeb;
+                        @include breakpoint(xl) {
+                            padding: 10px 40px;
+                            margin: 0 -40px;
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        span {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+            .ft-map-area {
+                @extend %rel;
+                .ft-map {
+                    iframe {
+                        width: 100%;
+                        height: 250px;
+                    }
+                    @include breakpoint(xl) {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: -180px;
+                        left: 0;
+                        iframe {
+                            width: 580px;
+                            height: 612px;
+                        }
+                    }
+                }
+            }
+            .ft-about-part {
+                @extend %rel;
+                margin-bottom: 30px;
+                @include breakpoint(xl) {
+                    margin-bottom: 0;
+                }
+                .bg-asb-thumb {
+                    @include breakpoint(xl) {
+                        position: absolute;
+                        top: -180px;
+                        width: 580px;
+                        height: 466px;
+                        right: 0;
+                        z-index: -1;
+                        background: url(../../assets/images/footer/bg-images/01.jpg) no-repeat;
+                        background-position: bottom right;
+                        background-size: cover;
+                        height: 612px;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        @extend %hidden;
+        .section-wrapper {
+            justify-content: center;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+            padding: 20px 0;
+            @extend %flex;
+            .left , .right {
+                width : 100%;
+            }
+            .left {
+                text-align: center;
+                @include breakpoint(xl) {
+                    width: 33.33%;
+                    text-align: left;
+                }
+            }
+            .right {
+                @extend %flex;
+                justify-content: center;
+                @include breakpoint(xl) {
+                    width: 66.66%;
+                }
+                li {
+                    padding: 10px 15px;
+                    align-items: center;
+                    @extend %flex;
+                    @extend %rel;
+                    &:after {  
+                        right: 0;
+                        top: 50%; 
+                        width: 1px;
+                        height: 40px ;
+                        background: #ece9ea;
+                        @extend %abs;
+                        @include transform(translateY(-50%) rotate(30deg));
+                    }
+                    &:last-child {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                    a {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        line-height: 40px;
+                        margin-right: 12px;
+                        color: $white-color;
+                        @include border-radius(50%);
+                        @include transition($transition);
+                        box-shadow: 0 3px 5px rgba(136, 136, 136, .2);
+                        &:hover {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ft top css
+.ft-top {
+    z-index: 1;
+    justify-content: center;
+    @extend %rel;
+    @extend %flex;
+    .ft-item  {
+        align-items: center;
+        background: #7dcd00;
+        width: 100%;
+        padding: 30px;
+        @extend %flex;
+        @include breakpoint(lg) {
+            width: calc(100% / 2);
+        }
+        @include breakpoint(xl) {
+            width: calc(100% / 3);
+        }
+        .ft-thumb {
+            width: 55px;
+        }
+        .ft-content {
+            padding-left: 20px;
+            width: calc(100% - 55px);
+            p {
+                margin: 0;
+            }
+            h6, p {
+                color: $white-color ;
+            }
+        }
+        &:nth-child(2) {
+            background: #00baff;
+        }
+        &:nth-child(3) {
+            background: #9160ff;
+        }
+    }
+}
+.copy-right-part {
+    padding: 40px 0;
+    p {
+        text-align: center;
+        margin-bottom: 0;
+        z-index: 1;
+        @extend %rel;
+        a {
+            padding: 0 5px;
+            color: $primary-color;
+            font-style: italic;
+            &:last-child {
+                @include breakpoint(xl) {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    &.style-2 {
+        p {
+            a {
+                color: $primary-color;
+                &:last-child {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,185 @@
+/* @@@@@@@@@@@@@  Banner Section Start Here  @@@@@@@@@@@@@@ */
+.banner {
+	&.style-1 {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	    z-index: 11;
+	    max-width: 1520px;
+		margin: 0 auto;
+		@extend %rel;
+	    // height: 800px;
+	    // @include breakpoint(xl) {
+	    // 	height: calc(100vh - 102px);
+	    // }
+	    // @include breakpoint(md) {
+    	//     height: 700px;
+        // }
+        .banner-top {
+            padding: 150px 0;
+        }
+	    .banner-content-area {
+		    // display: flex;
+		    // align-items: center;
+	    	// @include breakpoint(md) {
+	    	// 	height: 450px;
+	    	// }
+	    	// @include breakpoint(max-md) {
+	    	//     height: 450px;
+			// }
+			// @include breakpoint(max-sm) {
+			// 	height: 250px;
+			// }
+	    	.banner-content {
+	    		.banner-btn {
+	    			margin-top: 40px;
+	    			position: relative;
+	    			.btn {
+	    				background: $theme-color;
+	    				color: $white-color;
+	    			}
+	    			.video-btn {
+					    position: absolute;
+					    top: 0;
+					    right: 42%;
+					    @include breakpoint(max-md) {
+				    	    top: 100px;
+						    right: 50%;
+						    transform: translateX(50%);
+						}
+					    .video-icon {
+					    	position: relative;
+                            outline: none;
+                            display: inline-block;
+					    	img {
+					    		display: block;
+					    	}
+					    }
+					}
+	    		}
+	    	}
+	    }
+	    .banner-bottom {
+		    // position: absolute;
+		    // bottom: 0;
+		    // width: 100%;
+		    // left: 0;
+		    background: #ffffffa8;
+            padding: 20px 0;
+            @extend %rel;
+		    .banner-bottom-pattan {
+			    background: url(../../assets/images/banner/banner-bottom-pattan.png);
+			    position: absolute;
+			    width: 50%;
+			    height: 100%;
+			    left: 0;
+			    bottom: 0;
+			}
+			.bottom-wrapper {
+                @extend %flex;
+    			justify-content: space-between;
+				.post-item {
+                    @extend %flex;
+	    			align-items: center;
+				    z-index: 1;
+	    			position: relative;
+	    			@include breakpoint(max-md) {
+    				    width: 100%;
+					    justify-content: center;
+					    padding: 20px 0;
+	    			}
+	    			.post-thumb {
+	    				padding-right: 15px;
+                    }
+                    .post-content {
+                        h6, h5 {
+                            margin-bottom: 0;
+                        }
+                    }
+	    			&:nth-child(1) h5 {
+	    				color: #82cf09;
+	    			}
+	    			&:nth-child(2) h5 {
+	    				color: #00baff;
+	    			}
+	    			&:nth-child(3) h5 {
+	    				color: #9160ff;
+	    			}
+			    }
+			}
+		}
+	}
+
+	&.style-2 {
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center;
+		@include breakpoint(xl) {
+			// height: 100vh;
+			padding-bottom: 170px;
+	    }
+	    .banner-content-area {
+			@extend %rel;
+	    	&::before {
+	    		@include breakpoint(xl) {
+	    		    position: absolute;
+				    content: "";
+				    border-left: 500px solid transparent;
+				    border-right: 500px solid transparent;
+				    border-top: 800px solid #fff;
+				    left: 50%;
+				    top: 0;
+				    margin-left: -670px;
+					margin-top: -260px;
+				}
+	    	}
+	    	.banner-content {
+				@extend %rel;
+	    		z-index: 9;
+				margin-top: 150px;
+				h2 {
+					@include breakpoint(xl) {
+						font-size: 60px;
+					}
+					.primary-color {
+						color: $primary-color;
+						display: block;
+						@include breakpoint(xl) {
+							font-size: 72px;
+						}
+					}
+				}
+	    		.banner-btn {
+	    			display: inline-block;
+					@extend %rel;
+    			    margin-left: 70px;
+			        margin-top: 30px;
+    			    .video-btn {
+    			    	display: block;
+    			    	.video-icon {
+    			    		display: block;
+							outline: none;
+							@extend %rel;
+    			    		img {
+    			    			display: block;
+							}
+							.wave-pulse:after,.wave-pulse:before {
+								border-color: $theme-color;
+							}
+						}
+    			    }
+	    		}
+	    	}
+	    }
+	}
+}
+
+
+
+// 
+.page-header {
+	padding: 60px 0;
+	@include breakpoint(lg) {
+		padding: 150px 0;
+	}
+}
